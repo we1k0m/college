@@ -4,11 +4,11 @@
 using namespace std;
 
 void clearScreen() {
-    #ifdef _WIN32
-        system("cls");
-    #else
-        system("clear");
-    #endif
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 }
 
 void drawLine(int size, char symbol) {
@@ -50,7 +50,8 @@ void drawGrid(int size, char symbol) {
         for (int j = 0; j < size; j++) {
             if (i % 2 == 0) {
                 cout << symbol << " ";
-            } else {
+            }
+            else {
                 cout << ". ";
             }
         }
@@ -59,16 +60,10 @@ void drawGrid(int size, char symbol) {
 }
 
 int main() {
+    setlocale(0, "");
     int choice;
     int size, width, height;
     char symbol;
-    
-    cout << "[ 16 ] Самостоятельная работа | Е+" << endl;
-    cout << endl;
-    cout << "Тема: [ FOR ]" << endl;
-    cout << endl;
-    cout << "Продолжение программы \"Геометрические фигуры\"." << endl;
-    cout << endl;
     cout << "[ + ] Программа - \"Геометрические фигуры\"" << endl;
     cout << endl;
     cout << "[ 1 ] Линия" << endl;
@@ -79,81 +74,81 @@ int main() {
     cout << endl;
     cout << "[ + ] Выберите фигуру: ";
     cin >> choice;
-    
+
     clearScreen();
-    
+
     switch (choice) {
-        case 1:
-            cout << "[ + ] Фигура: \"Линия\"" << endl;
-            cout << endl;
-            cout << "[ + ] Размер: ";
-            cin >> size;
-            cout << "[ + ] Текстура: ";
-            cin >> symbol;
-            cout << endl;
-            cout << "[ + ] Результат:" << endl;
-            cout << endl;
-            drawLine(size, symbol);
-            break;
-            
-        case 2:
-            cout << "[ + ] Фигура: \"Квадрат\"" << endl;
-            cout << endl;
-            cout << "[ + ] Размер: ";
-            cin >> size;
-            cout << "[ + ] Текстура: ";
-            cin >> symbol;
-            cout << endl;
-            cout << "[ + ] Результат:" << endl;
-            cout << endl;
-            drawSquare(size, symbol);
-            break;
-            
-        case 3:
-            cout << "[ + ] Фигура: \"Прямоугольник\"" << endl;
-            cout << endl;
-            cout << "[ + ] Ширина: ";
-            cin >> width;
-            cout << "[ + ] Высота: ";
-            cin >> height;
-            cout << "[ + ] Текстура: ";
-            cin >> symbol;
-            cout << endl;
-            cout << "[ + ] Результат:" << endl;
-            cout << endl;
-            drawRectangle(width, height, symbol);
-            break;
-            
-        case 4:
-            cout << "[ + ] Фигура: \"Треугольник\"" << endl;
-            cout << endl;
-            cout << "[ + ] Размер: ";
-            cin >> size;
-            cout << "[ + ] Текстура: ";
-            cin >> symbol;
-            cout << endl;
-            cout << "[ + ] Результат:" << endl;
-            cout << endl;
-            drawTriangle(size, symbol);
-            break;
-            
-        case 5:
-            cout << "[ + ] Фигура: \"Решетка\"" << endl;
-            cout << endl;
-            cout << "[ + ] Размер: ";
-            cin >> size;
-            cout << "[ + ] Текстура: ";
-            cin >> symbol;
-            cout << endl;
-            cout << "[ + ] Результат:" << endl;
-            cout << endl;
-            drawGrid(size, symbol);
-            break;
-            
-        default:
-            cout << "Неверный выбор!" << endl;
-            break;
+    case 1:
+        cout << "[ + ] Фигура: \"Линия\"" << endl;
+        cout << endl;
+        cout << "[ + ] Размер: ";
+        cin >> size;
+        cout << "[ + ] Текстура: ";
+        cin >> symbol;
+        cout << endl;
+        cout << "[ + ] Результат:" << endl;
+        cout << endl;
+        drawLine(size, symbol);
+        break;
+
+    case 2:
+        cout << "[ + ] Фигура: \"Квадрат\"" << endl;
+        cout << endl;
+        cout << "[ + ] Размер: ";
+        cin >> size;
+        cout << "[ + ] Текстура: ";
+        cin >> symbol;
+        cout << endl;
+        cout << "[ + ] Результат:" << endl;
+        cout << endl;
+        drawSquare(size, symbol);
+        break;
+
+    case 3:
+        cout << "[ + ] Фигура: \"Прямоугольник\"" << endl;
+        cout << endl;
+        cout << "[ + ] Ширина: ";
+        cin >> width;
+        cout << "[ + ] Высота: ";
+        cin >> height;
+        cout << "[ + ] Текстура: ";
+        cin >> symbol;
+        cout << endl;
+        cout << "[ + ] Результат:" << endl;
+        cout << endl;
+        drawRectangle(width, height, symbol);
+        break;
+
+    case 4:
+        cout << "[ + ] Фигура: \"Треугольник\"" << endl;
+        cout << endl;
+        cout << "[ + ] Размер: ";
+        cin >> size;
+        cout << "[ + ] Текстура: ";
+        cin >> symbol;
+        cout << endl;
+        cout << "[ + ] Результат:" << endl;
+        cout << endl;
+        drawTriangle(size, symbol);
+        break;
+
+    case 5:
+        cout << "[ + ] Фигура: \"Решетка\"" << endl;
+        cout << endl;
+        cout << "[ + ] Размер: ";
+        cin >> size;
+        cout << "[ + ] Текстура: ";
+        cin >> symbol;
+        cout << endl;
+        cout << "[ + ] Результат:" << endl;
+        cout << endl;
+        drawGrid(size, symbol);
+        break;
+
+    default:
+        cout << "Неверный выбор!" << endl;
+        break;
     }
-    
+
     return 0;
 }
